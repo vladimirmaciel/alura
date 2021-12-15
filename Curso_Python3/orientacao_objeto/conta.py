@@ -8,6 +8,7 @@ class Conta:
         self.__titular = titular
         self.__saldo = saldo
         self.__limite = limite
+        # self.__codigo_banco = "001"
 
     def extrato(self):
         print(f"Saldo  de {self.__saldo} do titular {self.__titular}")
@@ -46,3 +47,9 @@ class Conta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
+
+     #  Métodos estáticos tem um cheiro de linguagem procedural já que independe de um objeto para ser chamado e não manipula informações/atributos de objetos. Deve ser usado com bastante cautela!
+    @staticmethod
+    def codigos_bancos():  # metodo estático faz são da classe, não precisa do self(não precisa do objeto)
+        # Criando dicionário com códigos dos bancos
+        return {"BB": '001', "Caixa": '104', "Bradesco": '237'}
