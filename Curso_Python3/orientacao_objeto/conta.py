@@ -51,5 +51,5 @@ class Conta:
      #  Métodos estáticos tem um cheiro de linguagem procedural já que independe de um objeto para ser chamado e não manipula informações/atributos de objetos. Deve ser usado com bastante cautela!
     @staticmethod
     def codigos_bancos():  # metodo estático faz são da classe, não precisa do self(não precisa do objeto)
-        # Criando dicionário com códigos dos bancos
+        #     # Criando dicionário com códigos dos bancos
         return {"BB": '001', "Caixa": '104', "Bradesco": '237'}
