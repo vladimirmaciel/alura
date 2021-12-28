@@ -44,17 +44,38 @@ class ExtratorURL:
         else:
             valor = self.get_url_parametros()[indice_valor:indice_e_comercial]
         return valor
+    
+    def __len__(self):
+        # Tivem que implementar este metódo para utilizar com o ExtratorURL
+        return len(self.url)
+    
+    def __str__(self):
+        # str metodo chamado quan seda um print em algum objeto
+        return  self.url + "\n" + "Parâmetros : " + self.get_url_parametros() + "\n" + "URL Base: " + self.get_url_base()
 
-
+    def __eq__(self, other):
+        return self.url == other.url
+        pass
 url = (
     "bytebank.com/cambio?moedaDestino=dolar&moedaOrigem=real&quantidade=100")
+
+print(len(url)) # url.__len__() o metodo len 
 extrator_url = ExtratorURL(url)
+print(extrator_url)
+print("O tamanho da URL:", len(extrator_url))
 # extrator_url = ExtratorURL(None)
 # extrator_url = ExtratorURL(
 #     "cursos.alura.com.br/course/string-python-extraindo-informacoes-url/task/91883")
 
 
-valor_quantidade = extrator_url.get_valor_parametro('quantidade')
-print(valor_quantidade)
+# valor_quantidade = extrator_url.get_valor_parametro('quantidade')
+# print(valor_quantidade)
 
 # extrator_url = ExtratorURL("   ")
+extrator_url = ExtratorURL(url)
+extrator_url2 = ExtratorURL(url)
+
+print(extrator_url == extrator_url2 )
+print(id(extrator_url2)) # verificar a posicção na memorida que a variavel ocupa utiliza o id
+print(id(extrator_url)) # dois objetos podem ser iguais mais não identicos
+# print(f"extrator url : {extrator_url}")
